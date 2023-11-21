@@ -3,15 +3,15 @@
 name: CI
 
 env:
-  GODOT_VERSION: 3.3.3
-  
+  GODOT_VERSION: 4.1.1
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.3.3
+      image: barichello/godot-ci:4.1.1
     steps:
       - name: Checkout
         uses: actions/checkout@v2
