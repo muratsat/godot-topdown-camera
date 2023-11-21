@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://div10ok1m3oho"]
+
+[ext_resource type="Script" path="res://rotating_rectangle.gd" id="1_01sdy"]
+[ext_resource type="Script" path="res://camera3d.gd" id="1_vrkph"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f5t1l"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="RotatingRectangle" type="MeshInstance3D" parent="map"]
+transform = Transform3D(15.0128, 0, 0, 0, 0.103893, 0, 0, 0, 13.3277, 0, 0, 0)
+mesh = SubResource("BoxMesh_f5t1l")
+script = ExtResource("1_01sdy")
+
+[node name="Rectangle" type="MeshInstance3D" parent="map"]
+transform = Transform3D(0.745962, -0.181565, 0, 0.815474, 0.145154, -0.486346, 0.309688, 0.0551242, 1.28065, 0, 0.785429, 0.858329)
+mesh = SubResource("BoxMesh_f5t1l")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
+script = ExtResource("1_vrkph")
+min_height = 5.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.300167, -0.435974, 0.848426, -0.000606087, 0.889528, 0.456881, -0.953887, 0.136626, -0.267271, 3.04077, 1.34944, -0.835021)
